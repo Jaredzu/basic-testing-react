@@ -1,14 +1,10 @@
 const { screen } = require("@testing-library/react")
-
-afterEach(() => {
-	console.log("después");
+afterEach(()=>{
+	console.log("despues");
 })
-
-beforeEach(() => {
+beforeEach(()=>{
 	console.log("antes");
 })
-
-
 describe("App Component", () => {
 // describe == suites test
 // test == test
@@ -21,16 +17,15 @@ describe("App Component", () => {
 		console.log(2)
 	})
 
-})
+},
+)
 
-describe("App Component 2", () => {
-	
-		test("App test", () => {
-			console.log(3)
-		})
-	
-		test("App test 2", () => {
-			console.log(4)
-		})
-	
+describe('App Component 2', () => {
+	test('test', () => {
+		console.log(3);
 	})
+	test('should first', () => {
+		console.log(4);
+	})
+
+});
