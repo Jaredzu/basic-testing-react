@@ -49,7 +49,7 @@ describe("App Component", () => {
 		expect(text).toBeEmptyDOMElement()
 
 		fireEvent.click(btn)
-		expect(text).toHaveTextContent("ERROR 🦁")
+		expect(text).toHaveTextContent("Hello sun!")
 
 		// ... 
 
