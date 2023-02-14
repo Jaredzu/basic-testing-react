@@ -14,5 +14,13 @@ describe("App Component", () => {
 		expect(btn).toBeInTheDocument()
 	})
 
+	test("App-test-2: Text component value", () => {
+		render(<App />)
+
+		const text = screen.getByTestId("text")
+
+		expect(text).toHaveTextContent("Hello sun!")
+	})
+
 })
 
