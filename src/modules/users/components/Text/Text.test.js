@@ -15,4 +15,13 @@ describe("Text test", () => {
 
         expect(text).toBeInTheDocument()
     })
+
+    test('Text Component Conditional Render: toggle == true', () => {
+        render(<Text toggle={true} displayTxt="displayTxt" />)
+
+        const text = screen.getByTestId("text")
+
+        expect(text).toHaveTextContent("displayTxt")
+    })
+
 })
