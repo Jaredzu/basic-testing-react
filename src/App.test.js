@@ -1,6 +1,7 @@
-import { cleanup, render, screen } from "@testing-library/react"
+import { cleanup, render, screen , fireEvent } from "@testing-library/react"
 import "@testing-library/jest-dom"
 import App from "./App"
+
 
 afterEach(() => {
 	console.log("_____");
@@ -42,6 +43,12 @@ describe("App Component", () => {
 		const text = screen.getByTestId("text")
 		const btn = screen.getByTestId("button")
 
+		expect(text).toHaveTextContent("Hello sun!")
+
+		fireEvent.click(btn)
+		expect(text).toBeEmptyDOMElement()
+
+		fireEvent.click(btn)
 		expect(text).toHaveTextContent("Hello sun!")
 
 		// ... 
