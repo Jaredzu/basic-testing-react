@@ -8,10 +8,17 @@ afterEach(() => {
 
 describe("Button test", () => {
     const setToggle = jest.fn()
-    render(<Button btnTxt="Hola c:" setToggle={setToggle} />) //función render
+    const BTN_TEXT = "Hola c:"
+    render(<Button btnTxt={BTN_TEXT} setToggle={setToggle}  />) //función render
+    
     const btn = screen.getByTestId("button")//guardamos en variable
+
     test("Button renders correctly", () => {
         expect(btn).toBeInTheDocument() //usamos variable para pruebas
+    })
+
+    test("Button Text Prop", () => {
+      expect(btn).toHaveTextContent(BTN_TEXT)
     })
 
 })
