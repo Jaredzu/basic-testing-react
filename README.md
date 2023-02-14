@@ -9,7 +9,7 @@
 - afterEach(callback function): Ejecuta el callback después de correr cada prueba.
 - beforeEach(callback function): Ejecuta el callback antes de correr cada prueba.
 
-- describe(nameOfTestSuite, callback_function): Define una prueba que contiene varias pruebas unitarias. callbackFunction contiene las pruebas.
+- describe(nameOfTestSuite, callback_function): Define un grupo que contiene varias pruebas unitarias. callbackFunction contiene las pruebas.
 - test(nameOfTest, callbackFunction): Define una prueba a ser ejecutada.
 - fireEvent: Simula un evento especificado.
 
