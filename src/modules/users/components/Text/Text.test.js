@@ -24,4 +24,12 @@ describe("Text test", () => {
         expect(text).toHaveTextContent("displayTxt")
     })
 
+    test('Text Component Conditional Render: toggle == false', () => {
+        render(<Text toggle={false} displayTxt="displayTxt" />)
+
+        const text = screen.getByTestId("text")
+
+        expect(text).toBeEmptyDOMElement()
+    })
+
 })
