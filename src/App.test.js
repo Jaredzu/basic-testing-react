@@ -1,8 +1,8 @@
 const { screen } = require("@testing-library/react")
-afterEach(()=>{
+afterEach(() => {
 	console.log("despues");
 })
-beforeEach(()=>{
+beforeEach(() => {
 	console.log("antes");
 })
 describe("App Component", () => {
