@@ -2,18 +2,19 @@ import { cleanup, render, screen, fireEvent } from "@testing-library/react"
 import "@testing-library/jest-dom"
 import App from "./App"
 
+
 afterEach(() => {
+	console.log("_____");
 	cleanup()
 })
 
 describe("App Component", () => {
-	// describe == suites test
-	// test == test
 
 	test("App-test-1: All childs rendered", () => {
-		console.log("App-test-1: All childs rendered");
+		console.log("App-test-1: All childs rendered\n");
 
 		render(<App />)
+
 		const text = screen.getByTestId("text")
 		const btn = screen.getByTestId("button")
 
@@ -22,8 +23,9 @@ describe("App Component", () => {
 	})
 
 	test("App-test-2: Text component value", () => {
+		console.log("App-test-2: Text component value\n");
 
-		console.log("App-test-2: Text component value");
+
 		render(<App />)
 
 		const text = screen.getByTestId("text")
@@ -31,21 +33,21 @@ describe("App Component", () => {
 		expect(text).toHaveTextContent("Hello sun!")
 	})
 
-	test("App-test-3:Toggle button behavior", () => {
-		console.log("App-test-3:Toggle button behavior");
+
+	test("App-test-3: Toggle button behavior", () => {
+		console.log("App-test-3: Toggle button behavior\n");
+
 
 		render(<App />)
 
 		const text = screen.getByTestId("text")
 		const btn = screen.getByTestId("button")
 
-
 		expect(text).toHaveTextContent("Hello sun!")
-
 
 		fireEvent.click(btn)
 		expect(text).toBeEmptyDOMElement()
-		
+
 		fireEvent.click(btn)
 		expect(text).toHaveTextContent("Hello sun!")
 
@@ -53,6 +55,5 @@ describe("App Component", () => {
 
 	})
 
-},
-)
+})
 
